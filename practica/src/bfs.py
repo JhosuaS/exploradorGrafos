@@ -1,5 +1,3 @@
-from collections import deque
-
 def ejecutar_bfs(grafo_obj, start: str, finish: str):
     if start not in grafo_obj.nodos or finish not in grafo_obj.nodos:
         return [], None, 0, False
