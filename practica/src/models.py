@@ -47,7 +47,9 @@ class Grafo:
             lista_vecinos = datos["vecinos"]
 
             for nombre_destino in lista_vecinos:
-                nodo_origen_obj = self.nodos[nombre_origen]
-                nodo_destino_obj = self.nodos[nombre_destino]
-                nueva_arista = Arista(nodo_origen_obj, nodo_destino_obj)
-                self.adyacencias[nombre_origen].append(nueva_arista)
+                arista_existe = any(a.destino.nombre == nombre_destino for a in self.adyacencias[nombre_origen])
+                if not arista_existe:
+                    nodo_origen_obj = self.nodos[nombre_origen]
+                    nodo_destino_obj = self.nodos[nombre_destino]
+                    nueva_arista = Arista(nodo_origen_obj, nodo_destino_obj)
+                    self.adyacencias[nombre_origen].append(nueva_arista)
