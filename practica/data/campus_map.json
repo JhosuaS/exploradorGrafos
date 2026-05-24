@@ -60,26 +60,5 @@
       "zona": "Sur",
       "vecinos": ["FGP", "FCA", "ESFOT"]
     }
-  },
-  
-  "aristas": [
-    ["FIS", "FIEE"],
-    ["FIS", "FC"],
-    ["FIS", "PE_Central"],
-    ["FIEE", "FC"],
-    ["FIEE", "PE_Central"],
-    ["FC", "FIM"],
-    ["FC", "FCA"],
-    ["FIM", "FIQA"],
-    ["FIM", "FICA"],
-    ["FIM", "PE_Canchas"],
-    ["FIQA", "PE_Canchas"],
-    ["FICA", "PE_Canchas"],
-    ["FICA", "FGP"],
-    ["FGP", "ESFOT"],
-    ["FGP", "PE_Sur"],
-    ["FCA", "ESFOT"],
-    ["FCA", "PE_Sur"],
-    ["ESFOT", "PE_Sur"]
-  ]
+  }
 }
