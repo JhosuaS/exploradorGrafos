@@ -1,64 +1,63 @@
 {
-  "grafo": {
-    "FIS": {
-      "tipo": "Facultad",
-      "zona": "Central",
-      "vecinos": ["FIEE", "FC", "PE_Central"]
-    },
-    "FIEE": {
-      "tipo": "Facultad",
-      "zona": "Central",
-      "vecinos": ["FIS", "FC", "PE_Central"]
-    },
-    "FC": {
-      "tipo": "Facultad",
-      "zona": "Central",
-      "vecinos": ["FIS", "FIEE", "FIM", "FCA"]
-    },
-    "PE_Central": {
-      "tipo": "Punto de Encuentro",
-      "zona": "Central",
-      "vecinos": ["FIS", "FIEE"]
-    },
-    "FIM": {
-      "tipo": "Facultad",
-      "zona": "Canchas / Talleres",
-      "vecinos": ["FC", "FIQA", "FICA", "PE_Canchas"]
-    },
-    "FIQA": {
-      "tipo": "Facultad",
-      "zona": "Canchas / Talleres",
-      "vecinos": ["FIM", "PE_Canchas"]
-    },
-    "FICA": {
-      "tipo": "Facultad",
-      "zona": "Canchas / Talleres",
-      "vecinos": ["FIM", "PE_Canchas", "FGP"]
-    },
-    "PE_Canchas": {
-      "tipo": "Punto de Encuentro",
-      "zona": "Canchas / Talleres",
-      "vecinos": ["FIM", "FIQA", "FICA"]
-    },
-    "FGP": {
-      "tipo": "Facultad",
-      "zona": "Sur",
-      "vecinos": ["FICA", "ESFOT", "PE_Sur"]
-    },
-    "FCA": {
-      "tipo": "Facultad",
-      "zona": "Sur",
-      "vecinos": ["FC", "ESFOT", "PE_Sur"]
-    },
-    "ESFOT": {
-      "tipo": "Facultad",
-      "zona": "Sur",
-      "vecinos": ["FGP", "FCA", "PE_Sur"]
-    },
-    "PE_Sur": {
-      "tipo": "Punto de Encuentro",
-      "zona": "Sur",
-      "vecinos": ["FGP", "FCA", "ESFOT"]
-    }
+  "FIS": {
+    "tipo": "Facultad",
+    "zona": "Central",
+    "vecinos": ["FIEE", "FC", "PE_Central"]
+  },
+  "FIEE": {
+    "tipo": "Facultad",
+    "zona": "Central",
+    "vecinos": ["FIS", "FC", "PE_Central"]
+  },
+  "FC": {
+    "tipo": "Facultad",
+    "zona": "Central",
+    "vecinos": ["FIS", "FIEE", "FIM", "FCA"]
+  },
+  "PE_Central": {
+    "tipo": "Punto de Encuentro",
+    "zona": "Central",
+    "vecinos": ["FIS", "FIEE"]
+  },
+  "FIM": {
+    "tipo": "Facultad",
+    "zona": "Canchas / Talleres",
+    "vecinos": ["FC", "FIQA", "FICA", "PE_Canchas"]
+  },
+  "FIQA": {
+    "tipo": "Facultad",
+    "zona": "Canchas / Talleres",
+    "vecinos": ["FIM", "PE_Canchas"]
+  },
+  "FICA": {
+    "tipo": "Facultad",
+    "zona": "Canchas / Talleres",
+    "vecinos": ["FIM", "PE_Canchas", "FGP"]
+  },
+  "PE_Canchas": {
+    "tipo": "Punto de Encuentro",
+    "zona": "Canchas / Talleres",
+    "vecinos": ["FIM", "FIQA", "FICA"]
+  },
+  "FGP": {
+    "tipo": "Facultad",
+    "zona": "Sur",
+    "vecinos": ["FICA", "ESFOT", "PE_Sur"]
+  },
+  "FCA": {
+    "tipo": "Facultad",
+    "zona": "Sur",
+    "vecinos": ["FC", "ESFOT", "PE_Sur"]
+  },
+  "ESFOT": {
+    "tipo": "Facultad",
+    "zona": "Sur",
+    "vecinos": ["FGP", "FCA", "PE_Sur"]
+  },
+  "PE_Sur": {
+    "tipo": "Punto de Encuentro",
+    "zona": "Sur",
+    "vecinos": ["FGP", "FCA", "ESFOT"]
   }
 }
+
