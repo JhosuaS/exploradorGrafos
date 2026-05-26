@@ -1,6 +1,6 @@
 from models import Nodo, Arista, Grafo
 from bfs import ejecutar_bfs
-from dfs import ejecutar_dfs
+from dfs import dfs
 import json
 from collections import deque
 from typing import List, Dict, Tuple, Optional
@@ -23,10 +23,10 @@ def main():
     
     # Manejo dinámico de rutas del archivo según dónde se ejecute el comando en WSL
     try:
-        grafo = cargar_datos("../data/grafo.json")
+        grafo = cargar_datos("../data/campus_map.json")
     except FileNotFoundError:
         try:
-            grafo = cargar_datos("data/grafo.json")
+            grafo = cargar_datos("data/campus_map.json")
         except FileNotFoundError:
             print("\n[!] ERROR: No se encontró el archivo de datos 'grafo.json'.")
             print("Asegúrate de que exista la carpeta 'data' con su archivo JSON respectivo.")
@@ -50,7 +50,7 @@ def main():
             fin = input("Ingrese el punto de DESTINO: ").strip()
             
             # Control de casos especiales (Puntos adicionales en rúbrica)
-            if inicio not in grafo.nodos or fin not in grafo.nodos:
+            if inicio not in grafo.nodos.keys() or fin not in grafo.nodos.keys():
                 print("\n[!] Error: Uno o ambos puntos ingresados no existen en el mapa del campus.")
                 continue
                 
@@ -72,15 +72,14 @@ def main():
             print("-" * 50)
             
             # --- Pruebas con el algoritmo DFS ---
-            dfs_visita, dfs_camino, dfs_pasos, dfs_exito = ejecutar_dfs(grafo, inicio, fin)
+            ruta_dfs, arbol_dfs = dfs(grafo, inicio, fin)
             print("\n[+] BÚSQUEDA EN PROFUNDIDAD (DFS):")
-            print(f" -> Orden de exploración de nodos: {dfs_visita}")
-            if dfs_exito and dfs_camino:
-                print(f" -> Ruta evacuada encontrada: {' -> '.join(dfs_camino)}")
-                print(f" -> Número de tramos (aristas): {dfs_pasos}")
-                print(" -> Nota: DFS explora hasta el fondo y NO garantiza la ruta más corta.")
+            #print(f" -> Orden de exploración de nodos: {dfs_visita}")
+            if ruta_dfs is not None:
+                print(f"\n✅ ¡Ruta DFS encontrada!: {' -> '.join(ruta_dfs)}")
+                print(f"🌳 Árbol de exploración DFS generado con éxito.")
             else:
-                print(" -> [X] No existe una ruta de conexión viable entre estos puntos.")
+                print("\n❌ Fallo en la evacuación: No se encontró camino o nodos inválidos.")
                 
         elif opcion == '2':
             print("\n" + "-"*45)
