@@ -59,12 +59,13 @@ def main():
             print("="*50)
             
             # --- Pruebas con el algoritmo BFS ---
-            bfs_visita, bfs_camino, bfs_pasos, bfs_exito = ejecutar_bfs(grafo, inicio, fin)
+            bfs_visita, bfs_camino, bfs_pasos, bfs_exito, bfs_arbol = ejecutar_bfs(grafo, inicio, fin)
             print("\n[+] BÚSQUEDA EN ANCHO (BFS):")
             print(f" -> Orden de exploración de nodos: {bfs_visita}")
             if bfs_exito and bfs_camino:
                 print(f" -> Ruta evacuada óptima: {' -> '.join(bfs_camino)}")
                 print(f" -> Número de tramos (aristas): {bfs_pasos}")
+                print(f"Arbol de exploracion: {bfs_arbol}")
                 print(" -> Nota: BFS garantiza encontrar la ruta más corta en aristas.")
             else:
                 print(" -> [X] No existe una ruta de conexión viable entre estos puntos.")
